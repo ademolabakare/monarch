@@ -1,16 +1,37 @@
 .hero-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 10rem; /* Adjust size as needed */
+    font-size: 6rem; /* Adjust for smaller screens */
     line-height: 1.1;
 }
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 9rem; /* Larger size for bigger screens */
+    }
+}
+
 .hero-subtitle {
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    font-size: 2rem; /* Adjust for smaller screens */
 }
+
+@media (min-width: 768px) {
+    .hero-subtitle {
+        font-size: 4rem; /* Larger size for bigger screens */
+    }
+}
+
 .hero-section {
-    max-width: 80vw; /* Adjust based on your design */
+    max-width: 80vw;
     margin: 0 auto;
 }
+
+footer {
+    background: rgba(0, 0, 0, 0.5); /* Make the footer semi-transparent to blend with the hero background */
+    color: white;
+}
+
 /* About Section Styles */
 .about-title {
     font-family: 'Roboto', sans-serif;
