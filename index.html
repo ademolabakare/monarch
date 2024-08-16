@@ -337,7 +337,7 @@
     </div>
   </section>
 
-<section id="people" class="relative w-full h-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 overflow-hidden bg-black hidden">
+  <section id="people" class="relative w-full h-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 overflow-y-scroll bg-black hidden">
     <!-- Back Button -->
     <div class="absolute top-4 left-4 cursor-pointer z-50" id="back-to-hero-about">
         <div class="back-button text-white p-2 bg-gray-800 rounded-full">
@@ -346,7 +346,7 @@
     </div>
 
     <!-- Person 1 -->
-    <div class="person w-full h-full flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+    <div class="person w-full h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSFUHlY4ec3zY7Y-BoJ1UcfULs5GlyM2gfNgE1AJJgsU4EBMS" alt="Adebola" class="w-full h-full object-cover">
         <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
             <h2 class="text-white text-2xl font-bold">Adebola</h2>
@@ -360,8 +360,7 @@
         </div>
     </div>
 
-    <!-- Person 2 -->
-    <div class="person w-full h-full flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+    <div class="person w-full h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTenOUtID5DQL8VfUPwpJyGzjVJgmyDvRG5XZ0VdVlL_VIRCfQJ" alt="Adebola" class="w-full h-full object-cover">
         <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
             <h2 class="text-white text-2xl font-bold">Adebola</h2>
@@ -375,7 +374,7 @@
         </div>
     </div>
 
-    <div class="person w-full h-full flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+    <div class="person w-full h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
         <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRUZzXWvntwzWNqFYbX0gVh1Dp8cIVnkzSfsg34MTP4lAVFA4Jt" alt="Adebola" class="w-full h-full object-cover">
         <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
             <h2 class="text-white text-2xl font-bold">Adebola</h2>
@@ -389,21 +388,7 @@
         </div>
     </div>
 
-    <div class="person w-full h-full flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
-        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQXvUo5v6plMlVnuIHIA3xOT09e2zCWYpZQMPmt-pl8o7mMlYa-" alt="Adebola" class="w-full h-full object-cover">
-        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
-            <h2 class="text-white text-2xl font-bold">Adebola</h2>
-            <p class="text-gray-400">Front-end Developer</p>
-            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
-            <div class="mt-4 flex space-x-4 justify-center">
-                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="person w-full h-full flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+    <div class="person w-full h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSHN4XaWd6vaa2hf0ASgu2uh0xzd6xdOpB0VgaHXy2hUBl6HkNT" alt="Adebola" class="w-full h-full object-cover">
         <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
             <h2 class="text-white text-2xl font-bold">Adebola</h2>
@@ -416,7 +401,21 @@
             </div>
         </div>
     </div>
-    <!-- Add more people here as needed -->
+
+    <div class="person w-full h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQXvUo5v6plMlVnuIHIA3xOT09e2zCWYpZQMPmt-pl8o7mMlYa-" alt="Adebola" class="w-full h-full object-cover">
+        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
+            <h2 class="text-white text-2xl font-bold">Adebola</h2>
+            <p class="text-gray-400">Front-end Developer</p>
+            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
+            <div class="mt-4 flex space-x-4 justify-center">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Repeat for other persons... -->
 </section>
 
 <section id="contact" class="relative w-full h-screen flex flex-col md:flex-row bg-black hidden">
