@@ -61,14 +61,5 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-//people
-document.addEventListener("DOMContentLoaded", () => {
-const people = document.querySelectorAll('.person');
-people.forEach((person, index) => {
-setTimeout(() => {
-    person.classList.remove('scale-90');
-    person.classList.add('scale-100');
-}, index * 300); // Each person drops in after 300ms interval
-});
-});
+
 
