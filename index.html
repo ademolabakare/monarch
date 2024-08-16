@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monarch - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/tailwindcss">
+      @layer base {
+          :root {
+              --background: 0 0% 100%;
+              --foreground: 240 10% 3.9%;
+              --card: 0 0% 100%;
+              --card-foreground: 240 10% 3.9%;
+              --popover: 0 0% 100%;
+              --popover-foreground: 240 10% 3.9%;
+              --primary: 240 5.9% 10%;
+              --primary-foreground: 0 0% 98%;
+              --secondary: 240 4.8% 95.9%;
+              --secondary-foreground: 240 5.9% 10%;
+              --muted: 240 4.8% 95.9%;
+              --muted-foreground: 240 3.8% 46.1%;
+              --accent: 240 4.8% 95.9%;
+              --accent-foreground: 240 5.9% 10%;
+              --destructive: 0 84.2% 60.2%;
+              --destructive-foreground: 0 0% 98%;
+              --border: 240 5.9% 90%;
+              --input: 240 5.9% 90%;
+              --ring: 240 5.9% 10%;
+              --radius: 0.5rem;
+          }
+          .dark {
+              --background: 240 10% 3.9%;
+              --foreground: 0 0% 98%;
+              --card: 240 10% 3.9%;
+              --card-foreground: 0 0% 98%;
+              --popover: 240 10% 3.9%;
+              --popover-foreground: 0 0% 98%;
+              --primary: 0 0% 98%;
+              --primary-foreground: 240 5.9% 10%;
+              --secondary: 240 3.7% 15.9%;
+              --secondary-foreground: 0 0% 98%;
+              --muted: 240 3.7% 15.9%;
+              --muted-foreground: 240 5% 64.9%;
+              --accent: 240 3.7% 15.9%;
+              --accent-foreground: 0 0% 98%;
+              --destructive: 0 62.8% 30.6%;
+              --destructive-foreground: 0 0% 98%;
+              --border: 240 3.7% 15.9%;
+              --input: 240 3.7% 15.9%;
+              --ring: 240 4.9% 83.9%;
+          }
+      }
+  </style>
+    <style>
+
+
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex flex-col items-center justify-center bg-cover bg-center relative" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/008/969/361/small_2x/multi-layers-gray-blue-dark-texture-3d-papercut-layers-in-gradient-banner-abstract-paper-cut-art-background-design-for-website-template-topography-map-concept-or-smooth-origami-paper-cut-vector.jpg');">
+      <div class="hero-section text-center">
+          <h1 class="text-10xl md:text-9xl font-bold hero-title">
+              Monarch
+          </h1>
+          <div class="mt-8">
+              <p class="text-3xl md:text-5xl hero-subtitle">
+                  Live through experience
+              </p>
+             
+          </div>
+      </div>
+      <i id="menu-icon" class="fas fa-bars text-3xl absolute top-4 left-4 cursor-pointer"></i>
+  </section>
+
+    <!-- Navigation Menu (Hidden initially) -->
+    <nav id="menu" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex flex-col justify-center items-start space-y-8 p-8 hidden">
+      <a href="#" data-target="about" class="text-4xl font-bold border-b-2 border-transparent hover:border-gray-300 pb-2 hover:scale-110 transition transform hover:text-gray-100">About Us</a>
+      <a href="#" data-target="promise" class="text-4xl font-bold border-b-2 border-transparent hover:border-gray-300 pb-2 hover:scale-110 transition transform hover:text-gray-300">Our Promise</a>
+      <a href="#" data-target="stack" class="text-4xl font-bold border-b-2 border-transparent hover:border-gray-300 pb-2 hover:scale-110 transition transform hover:text-gray-300">Stack</a>
+      <a href="#" data-target="projects" class="text-4xl font-bold border-b-2 border-transparent hover:border-gray-300 pb-2 hover:scale-110 transition transform hover:text-gray-300">Projects</a>
+      <a href="#" data-target="people" class="text-4xl font-bold border-b-2 border-transparent hover:border-gray-300 pb-2 hover:scale-110 transition transform hover:text-gray-300">People</a>
+      <a href="#" data-target="contact" class="text-4xl font-bold border-b-2 border-transparent hover:border-gray-300 pb-2 hover:scale-110 transition transform hover:text-gray-300">Contact</a>
+  </nav>
+  
+
+    <!-- About Us Section (Initially Hidden) -->
+    <section id="about" class="hidden h-screen flex items-center justify-center bg-gray-800 relative">
+      <div class="absolute top-4 left-4 cursor-pointer" id="back-to-hero-about">
+        <div class="back-button">
+          <i class="fas fa-arrow-left text-black"></i>
+      </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center space-x-0 md:space-x-8">
+          <img src="https://github.com/user-attachments/assets/21e74044-e371-4f01-a700-b21babf8aa20" alt="Modern and Contemporary Art" class="about-image md:w-1/2 rounded-lg shadow-lg">
+          <div class="absolute top-1/2 left-4 transform -translate-y-1/2 rotate-90 origin-left">
+            <span class="text-white text-4xl font-bold">Monarch</span>
+        </div>
+        <div class="p-8 text-center md:text-left">
+          <h2 class="about-title text-4xl font-bold mb-4">About Us</h2>
+          <p class="about-content text-lg mb-4">
+              At Monarch, we are a team of vetted software engineers committed to crafting exceptional digital experiences. Our diverse skill set spans a wide array of technology stacks and expertise, enabling us to build tailored solutions that elevate our clients' online presence. We believe that each brand is unique, and we strive to deliver innovative web solutions that reflect and enhance their distinct identity.
+          </p>
+          <p class="about-content text-lg">
+              Whether you're looking to develop a cutting-edge web application, a compelling digital strategy, or a stunning online brand presence, Monarch is dedicated to making your vision a reality with professionalism and creativity.
+          </p>
+    
+              <div class="mt-6">
+                <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black px-4 py-2 rounded-lg transition-colors duration-300">
+                    Discover more
+                </button>
+            </div>
+          </div>
+      </div>
+  </section>
+
+ <!-- Our Promise Section -->
+<section id="promise" class="hidden h-screen flex items-center justify-center bg-gray-800 relative">
+  <!-- Back Button -->
+  <div class="absolute top-4 left-4 cursor-pointer z-20" id="back-to-hero-promise">
+      <div class="bg-white bg-opacity-20 p-3 rounded-full">
+          <i class="fas fa-arrow-left text-white"></i>
+      </div>
+  </div>
+  <!-- Monarch Text -->
+  
+  <!-- Content Wrapper -->
+  <div class="bg-gray-800 p-8 w-full max-w-6xl mx-auto relative mt-16 md:mt-24">
+    <div class="text-center mb-8 text-white text-2xl font-bold z-10">
+      Monarch
+  </div>
+      <!-- Heading -->
+      <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-white">We don’t just Build Websites,<br>We Craft Experiences</h2>
+      </div>
+      <!-- Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-900 p-8 rounded-lg shadow-lg flex flex-col items-center">
+              <i class="fas fa-desktop text-5xl text-yellow-500 mb-4"></i>
+              <h3 class="text-xl font-semibold text-white">Webflow Development</h3>
+              <p class="text-gray-300 mt-2 text-center">Webflow turns visions into reality, when no code is preferred and the best part? You’re in charge of your project. Update a description, and see blog posts, etc.</p>
+              <a href="#" class="mt-4 inline-block bg-secondary text-secondary-foreground hover:bg-secondary/80 py-2 px-4 rounded">Start a Project</a>
+          </div>
+          <div class="bg-gray-900 p-8 rounded-lg shadow-lg flex flex-col items-center">
+              <i class="fas fa-pencil-ruler text-5xl text-yellow-500 mb-4"></i>
+              <h3 class="text-xl font-semibold text-white">UI/UX Design</h3>
+              <p class="text-gray-300 mt-2 text-center">We create pixel-perfect designs with Figma, designing experiences that captivate and convert. No challenge is too big for us.</p>
+              <a href="#" class="mt-4 inline-block bg-secondary text-secondary-foreground hover:bg-secondary/80 py-2 px-4 rounded">Start a Project</a>
+          </div>
+          <div class="bg-gray-900 p-8 rounded-lg shadow-lg flex flex-col items-center">
+              <i class="fas fa-code text-5xl text-yellow-500 mb-4"></i>
+              <h3 class="text-xl font-semibold text-white">Web Development</h3>
+              <p class="text-gray-300 mt-2 text-center">We bring your web design to life using the latest technology. Together, we can create solutions that grow your business.</p>
+              <a href="#" class="mt-4 inline-block bg-secondary text-secondary-foreground hover:bg-secondary/80 py-2 px-4 rounded">Start a Project</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Stack Section -->
+<section id="stack" class="relative h-screen bg-gray-800 text-white hidden">
+  <!-- Back Button -->
+  <div class="absolute top-4 left-4 cursor-pointer z-20" id="back-to-hero-stack">
+      <div class="bg-white bg-opacity-20 p-3 rounded-full">
+          <i class="fas fa-arrow-left text-white"></i>
+      </div>
+  </div>
+  <!-- Content Wrapper -->
+  <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+      <!-- First Row, Left Segment -->
+      <div class="bg-gray-900 p-8 flex flex-col justify-center transform transition duration-300 hover:scale-105">
+        <h2 class="text-2xl font-bold">Build Flexible, Design-Driven Websites with Ease</h2>
+        <p class="text-gray-300 mt-4">Multiple layouts and color scheme options mean that you can customize the look and feel of your project easily – distinguishing you from the pack.</p>
+        <!-- Icons for Web Development -->
+        <div class="flex flex-wrap justify-center mt-4">
+            <i class="fab fa-react text-blue-500 text-3xl mx-2"></i>
+            <i class="fab fa-node text-green-500 text-3xl mx-2"></i>
+            <i class="fab fa-php text-purple-500 text-3xl mx-2"></i>
+            <i class="fab fa-mysql text-white-500 text-3xl mx-2"></i>
+            <i class="fab fa-angular text-yellow-500 text-3xl mx-2"></i>
+            <i class="fab fa-vue text-yellow-500 text-3xl mx-2"></i>
+        </div>
+    </div>
+    
+      <!-- First Row, Right Segment -->
+      <div class="bg-cover bg-center transform transition duration-300 hover:scale-105" style="background-image: url('https://github.com/user-attachments/assets/2bf5b4f7-1de7-49a6-8fd2-3bd7f71e4271');">
+        <div class="bg-black bg-opacity-50 p-8 flex flex-col justify-center h-full">
+            <h2 class="text-white text-2xl font-bold">Innovative Solutions</h2>
+            <p class="text-gray-300 mt-2">Explore cutting-edge technologies that elevate your projects.</p>
+            <!-- Icons for Webflow Development -->
+            <div class="flex flex-wrap justify-center mt-4">
+                <i class="fab fa-html5 text-yellow-500 text-3xl mx-2"></i>
+                <i class="fab fa-css3 text-blue-500 text-3xl mx-2"></i>
+                <i class="fab fa-js text-yellow-500 text-3xl mx-2"></i>
+                <i class="fab fa-bootstrap text-blue-500 text-3xl mx-2"></i>
+                <i class="fab fa-tailwindcss text-yellow-500 text-3xl mx-2"></i>
+            </div>
+        </div>
+    </div>
+     
+      <!-- Second Row, Left Segment -->
+      <div class="bg-cover bg-center transform transition duration-300 hover:scale-105" style="background-image: url('https://github.com/user-attachments/assets/56290e03-60e3-4c58-a85e-6f281e8c80fe');">
+        <div class="bg-black bg-opacity-50 p-8 flex flex-col justify-center h-full">
+            <h2 class="text-white text-2xl font-bold">Creative Design</h2>
+            <p class="text-gray-300 mt-2">Craft visually stunning experiences that captivate your audience.</p>
+            <!-- Icons for UI/UX Design -->
+            <div class="flex flex-wrap justify-center mt-4">
+                <i class="fab fa-figma text-purple-500 text-3xl mx-2"></i>
+                <i class="fab fa-sketch text-yellow-500 text-3xl mx-2"></i>
+            </div>
+        </div>
+    </div>
+      <!-- Second Row, Right Segment -->
+      <div class="bg-white text-black p-8 flex flex-col justify-center transform transition duration-300 hover:scale-105">
+          <h2 class="text-2xl font-bold">Version Control</h2>
+          <p class="mt-4">Manage your code and track changes efficiently. Keep your projects organized and collaborative.</p>
+          <!-- Icons for Version Control -->
+          <div class="flex flex-wrap justify-center mt-4">
+              <i class="fab fa-github text-black text-3xl mx-2"></i>
+              <i class="fab fa-bitbucket text-blue-500 text-3xl mx-2"></i>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="projects" class="h-screen flex relative hidden">
+  <div class="absolute top-4 left-4 cursor-pointer" id="back-to-hero-about">
+    <div class="back-button">
+      <i class="fas fa-arrow-left text-black"></i>
+  </div>
+  </div>
+
+  <!-- Left Section: Image Background with Text -->
+  <div class="w-1/2 bg-cover bg-center flex items-center justify-center p-8" style="background-image: url('file:///C:/Users/USER/Desktop/monarch/asset/office.webp');">
+    <h2 class="text-4xl font-bold text-white text-center">At Monarch, we take pride in our work</h2>
+  </div>
+
+  <!-- Right Section: Scrollable Cards -->
+  <div class="w-1/2 bg-white overflow-y-scroll p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-gray-100 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQx5zYX8j2YCF-rEAOpc9XG9x2q1npFpqD0yU72y5lJk62kkMm7');"></div>
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Project 1</h3>
+          <p class="text-gray-600">Description of the project goes here.</p>
+          <a href="#" class="mt-4 inline-block bg-primary text-primary-foreground hover:bg-primary/80 py-2 px-4 rounded">View Website</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-gray-100 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('https://placehold.co/300x200?text=Project+2');"></div>
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Project 2</h3>
+          <p class="text-gray-600">Description of the project goes here.</p>
+          <a href="#" class="mt-4 inline-block bg-primary text-primary-foreground hover:bg-primary/80 py-2 px-4 rounded">View Website</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-gray-100 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('https://placehold.co/300x200?text=Project+3');"></div>
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Project 3</h3>
+          <p class="text-gray-600">Description of the project goes here.</p>
+          <a href="#" class="mt-4 inline-block bg-primary text-primary-foreground hover:bg-primary/80 py-2 px-4 rounded">View Website</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-gray-100 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('https://placehold.co/300x200?text=Project+4');"></div>
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Project 4</h3>
+          <p class="text-gray-600">Description of the project goes here.</p>
+          <a href="#" class="mt-4 inline-block bg-primary text-primary-foreground hover:bg-primary/80 py-2 px-4 rounded">View Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="people" class="relative w-full h-screen flex flex-wrap overflow-hidden bg-black hidden">
+    <!-- Back Button -->
+    <div class="absolute top-4 left-4 cursor-pointer z-50" id="back-to-hero-about">
+        <div class="back-button text-white p-2 bg-gray-800 rounded-full">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <!-- Person 1 -->
+    <div class="person w-full md:w-1/5 h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSFUHlY4ec3zY7Y-BoJ1UcfULs5GlyM2gfNgE1AJJgsU4EBMS" alt="Adebola" class="w-full h-full object-cover">
+        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
+            <h2 class="text-white text-2xl font-bold">Adebola</h2>
+            <p class="text-gray-400">Front-end Developer</p>
+            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
+            <div class="mt-4 flex space-x-4 justify-center">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repeat for other people -->
+    <div class="person w-full md:w-1/5 h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTenOUtID5DQL8VfUPwpJyGzjVJgmyDvRG5XZ0VdVlL_VIRCfQJ" alt="Adebola" class="w-full h-full object-cover">
+        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
+            <h2 class="text-white text-2xl font-bold">Adebola</h2>
+            <p class="text-gray-400">Front-end Developer</p>
+            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
+            <div class="mt-4 flex space-x-4 justify-center">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="person w-full md:w-1/5 h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRUZzXWvntwzWNqFYbX0gVh1Dp8cIVnkzSfsg34MTP4lAVFA4Jt" alt="Adebola" class="w-full h-full object-cover">
+        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
+            <h2 class="text-white text-2xl font-bold">Adebola</h2>
+            <p class="text-gray-400">Front-end Developer</p>
+            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
+            <div class="mt-4 flex space-x-4 justify-center">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="person w-full md:w-1/5 h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSHN4XaWd6vaa2hf0ASgu2uh0xzd6xdOpB0VgaHXy2hUBl6HkNT" alt="Adebola" class="w-full h-full object-cover">
+        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
+            <h2 class="text-white text-2xl font-bold">Adebola</h2>
+            <p class="text-gray-400">Front-end Developer</p>
+            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
+            <div class="mt-4 flex space-x-4 justify-center">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="person w-full md:w-1/5 h-screen flex items-end justify-center transform transition-transform duration-700 scale-90 hover:scale-105 relative">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQXvUo5v6plMlVnuIHIA3xOT09e2zCWYpZQMPmt-pl8o7mMlYa-" alt="Adebola" class="w-full h-full object-cover">
+        <div class="overlay absolute bottom-0 w-full p-4 bg-gradient-to-t from-black via-transparent to-transparent text-center">
+            <h2 class="text-white text-2xl font-bold">Adebola</h2>
+            <p class="text-gray-400">Front-end Developer</p>
+            <button class="mt-2 px-4 py-2 border border-white text-white bg-transparent rounded hover:bg-white hover:text-black transition">View Resume</button>
+            <div class="mt-4 flex space-x-4 justify-center">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more people here as needed -->
+
+</section>
+
+<section id="contact" class="relative w-full h-screen flex flex-col md:flex-row bg-black">
+    <!-- Left Side: Contact Info -->
+    <div class="left-side w-full md:w-1/3 h-full bg-cover bg-center relative flex flex-col justify-center items-start p-8" style="background-image: url('https://via.placeholder.com/600');">
+        <!-- Back Button -->
+        <div class="absolute top-4 left-4 cursor-pointer z-50" id="back-to-hero-about">
+            <div class="back-button text-white p-2 bg-gray-800 rounded-full">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="text-white">
+            <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+            <p class="text-lg flex items-center mb-4">
+                <i class="fas fa-phone-alt mr-2"></i> +123-456-7890
+            </p>
+            <p class="text-lg mb-8">100% Remote</p>
+            <p class="text-lg mb-4">Reach out to us:</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-white hover:animate-bounce"><i class="fab fa-github text-2xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <div class="right-side w-full md:w-2/3 h-full bg-white flex justify-center items-center p-8">
+        <form class="w-full max-w-lg p-8 space-y-6">
+            <div class="flex flex-col space-y-4">
+                <div class="flex flex-col">
+                    <label for="name" class="text-gray-700 font-semibold mb-2">Name</label>
+                    <input type="text" id="name" class="p-4 rounded-lg bg-gray-100 border-t border-l border-r focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name">
+                </div>
+                <div class="flex flex-col">
+                    <label for="email" class="text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" class="p-4 rounded-lg bg-gray-100 border-t border-l border-r focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your Email">
+                </div>
+                <div class="flex flex-col">
+                    <label for="message" class="text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea id="message" class="p-4 rounded-lg bg-gray-100 border-t border-l border-r focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+    <!-- More Sections... (Follow similar structure with back icon) -->
+
+    <script src="script.js">
+       /*document.addEventListener('DOMContentLoaded', function() {
+            const menu = document.getElementById('menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            // Toggle menu visibility
+            menuIcon.addEventListener('click', function() {
+                menu.classList.toggle('hidden');
+            });
+
+            // Dismiss menu on page click
+            document.body.addEventListener('click', function(e) {
+                if (e.target.id !== 'menu-icon' && !menu.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Section transitions
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Hide the menu
+                document.getElementById('menu').classList.add('hidden');
+
+                // Hide all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Show the target section
+                const targetSection = document.getElementById(link.dataset.target);
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('fade-in'); // Add smooth transition effect
+            });
+        });
+
+        // Back to Hero functionality
+        document.querySelectorAll('[id^="back-to-hero"]').forEach(backButton => {
+            backButton.addEventListener('click', function() {
+                // Hide all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Show the hero section
+                document.getElementById('hero').classList.remove('hidden');
+            });
+        });
+
+        // CSS for smooth transition
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        //people
+        document.addEventListener("DOMContentLoaded", () => {
+    const people = document.querySelectorAll('.person');
+    people.forEach((person, index) => {
+        setTimeout(() => {
+            person.classList.remove('scale-90');
+            person.classList.add('scale-100');
+        }, index * 300); // Each person drops in after 300ms interval
+    });
+});*/
+
+
+    </script>
+
+</body>
+</html>
