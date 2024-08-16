@@ -1,0 +1,51 @@
+.hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 10rem; /* Adjust size as needed */
+    line-height: 1.1;
+}
+.hero-subtitle {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+.hero-section {
+    max-width: 80vw; /* Adjust based on your design */
+    margin: 0 auto;
+}
+/* About Section Styles */
+.about-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.about-content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+}
+.back-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-button i {
+    color: white;
+}
+.about-image {
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+.back-button {
+background-color: rgba(255, 255, 255, 0.2); /* Optional: Background color */
+padding: 0.75rem;
+border-radius: 9999px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.back-button i {
+color: black; /* Set icon color to black */
+}
